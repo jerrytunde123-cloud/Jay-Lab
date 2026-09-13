@@ -207,7 +207,6 @@
       <p class="text-small" style="margin-bottom: 10px;"><strong>Join AND share</strong> these channels to your friends — invite them so everyone can participate and earn together. Rewards reset daily.</p>
       <div class="bonus-grid">
         <a href="https://t.me/jambvip" target="_blank" class="btn-whatsapp btn-telegram" id="tgChannelBtn"><i class="fab fa-telegram"></i> Join JAMB Telegram (+15 pts)</a>
-        <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp btn-telegram" id="tgChannelBtn"><i class="fab fa-telegram"></i> Join JAMB Telegram (+15 pts)</a>
         <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp" id="waecChannelBtn" style="background: #16a34a; box-shadow: 0 6px 14px rgba(22, 163, 74, 0.25);"><i class="fab fa-whatsapp"></i> Join WAEC Tutorial Channel (+10 pts)</a>
         <a href="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" target="_blank" class="btn-whatsapp" id="jambTutChannelBtn" style="background: #0e7490; box-shadow: 0 6px 14px rgba(14, 116, 144, 0.25);"><i class="fab fa-whatsapp"></i> Join JAMB Tutorial Channel (+10 pts)</a>
         <a href="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" target="_blank" class="btn-whatsapp" id="jambVipChannelBtn" style="background: #7c3aed; box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);"><i class="fab fa-whatsapp"></i> Join JAMB VIP Channel (+15 pts)</a>
@@ -284,7 +283,7 @@
 
     // ==================== POINTS ====================
     const POINTS = {
-      UNLOCK_BONUS: 15,
+      UNLOCK_BONUS: 15,          // awarded once per day when BOTH channels joined
       TG_CHANNEL_BONUS: 15,
       WAEC_CHANNEL_BONUS: 10,
       JAMB_TUTORIAL_BONUS: 10,
@@ -373,23 +372,29 @@
       toastTimer = setTimeout(() => { t.className = 'toast ' + color; }, 2600);
     }
 
-    // ==================== DAILY UNLOCK (Channels 1 & 2 reset each day) ====================
+    // ==================== DAILY UNLOCK (Channels 1 & 2) ====================
     let unlocked = false;
     function checkUnlock() {
       const c1 = claimedToday('ch1');
       const c2 = claimedToday('ch2');
 
-      // Reflect button claimed state
       const b1 = document.getElementById('channel1Btn');
       const b2 = document.getElementById('channel2Btn');
-      if (c1) { b1.style.opacity = '0.6'; } else { b1.style.opacity = '1'; }
-      if (c2) { b2.style.opacity = '0.6'; } else { b2.style.opacity = '1'; }
+      b1.style.opacity = c1 ? '0.6' : '1';
+      b2.style.opacity = c2 ? '0.6' : '1';
 
       if (c1 && c2) {
         unlocked = true;
         document.getElementById('unlockStatus').innerHTML = '<i class="fas fa-unlock"></i> unlocked';
         document.getElementById('unlockStatus').style.background = '#25D366';
         document.getElementById('bonusRow15').classList.add('claimed');
+
+        // Award +15 ONCE per day when BOTH channels are joined
+        if (!claimedToday('unlockBonus')) {
+          markClaimedToday('unlockBonus');
+          addPoints(POINTS.UNLOCK_BONUS);
+          showToast('🎉 +' + POINTS.UNLOCK_BONUS + ' points for joining both channels!', 'green');
+        }
       } else {
         unlocked = false;
         document.getElementById('unlockStatus').innerHTML = '<i class="fas fa-lock"></i> locked';
@@ -399,19 +404,19 @@
       updateStartButtonState();
     }
 
+    // Channel 1 click — only marks visit, no points
     document.getElementById('channel1Btn').addEventListener('click', () => {
-      if (claimedToday('ch1')) { showToast('Already claimed today', 'red'); return; }
+      if (claimedToday('ch1')) { showToast('Already joined today', 'red'); return; }
       markClaimedToday('ch1');
-      addPoints(POINTS.UNLOCK_BONUS);
-      showToast('✅ +' + POINTS.UNLOCK_BONUS + ' pts for Channel 1!', 'green');
+      showToast('✅ Channel 1 joined. Join Channel 2 to unlock + get 15 pts!', 'green');
       setTimeout(checkUnlock, 200);
     });
 
+    // Channel 2 click — only marks visit, no points
     document.getElementById('channel2Btn').addEventListener('click', () => {
-      if (claimedToday('ch2')) { showToast('Already claimed today', 'red'); return; }
+      if (claimedToday('ch2')) { showToast('Already joined today', 'red'); return; }
       markClaimedToday('ch2');
-      addPoints(POINTS.UNLOCK_BONUS);
-      showToast('✅ +' + POINTS.UNLOCK_BONUS + ' pts for Channel 2!', 'green');
+      showToast('✅ Channel 2 joined. Unlocking now…', 'green');
       setTimeout(checkUnlock, 200);
     });
 
@@ -420,7 +425,6 @@
 
     // ==================== DAILY-RESET TASK UI REFRESH ====================
     function refreshDailyTasks() {
-      // Bonus rows
       ['tg','waec','jambtut','vip'].forEach(k => {
         const rowId = { tg:'bonusRowTg', waec:'bonusRowWaec', jambtut:'bonusRowJambTut', vip:'bonusRowVip' }[k];
         const row = document.getElementById(rowId);
@@ -429,7 +433,6 @@
         else row.classList.remove('claimed');
       });
 
-      // Share buttons
       document.querySelectorAll('.share-btn[data-share]').forEach(btn => {
         const key = 'share_' + btn.dataset.share;
         if (claimedToday(key)) {
@@ -441,7 +444,6 @@
         }
       });
 
-      // Update unlock UI
       checkUnlock();
     }
 
