@@ -14,59 +14,65 @@
     .points-badge { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; padding: 0.35rem 1rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35); }
     .points-badge i { color: #fff; }
     .subhead { display: flex; justify-content: space-between; align-items: center; color: #3a5e73; margin-bottom: 1.2rem; border-bottom: 1px solid #e9edf2; padding-bottom: 0.75rem; flex-wrap: wrap; gap: 8px; }
-    .channel-badge { background: #25D366; color: white; padding: 0.25rem 1rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3); }
     .card { background: #ffffff; border-radius: 1.5rem; padding: 1.2rem 1rem; box-shadow: 0 4px 12px rgba(0, 20, 30, 0.05); margin: 1rem 0; border: 1px solid #eef3f8; }
     .card-title { font-weight: 600; color: #1d3b4f; font-size: 1rem; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
     .card-title i { color: #2a7f9f; width: 1.5rem; }
-    .unlock-box { background: #f0f7fe; border-radius: 1.2rem; padding: 1.2rem 1rem; text-align: center; border: 1px dashed #3f8db0; margin: 0.5rem 0 1.2rem; }
-    .unlock-box p { font-size: 0.9rem; color: #1d4b62; margin-bottom: 12px; font-weight: 500; }
-    .btn-whatsapp { background: #25D366; border: none; color: white; font-weight: 600; padding: 0.9rem 1.5rem; border-radius: 60px; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 320px; transition: all 0.15s; box-shadow: 0 6px 14px rgba(37, 211, 102, 0.25); cursor: pointer; text-decoration: none; }
-    .btn-whatsapp:active { transform: scale(0.96); background: #1fa854; }
-    .btn-telegram { background: #229ED9; box-shadow: 0 6px 14px rgba(34, 158, 217, 0.25); }
-    .btn-telegram:active { background: #1a7fb0; }
-    .btn-block { width: 100%; justify-content: center; border: none; padding: 0.9rem; border-radius: 60px; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 10px; transition: all 0.15s; cursor: pointer; text-decoration: none; }
-    .btn-primary { background: #1a5f7a; color: white; box-shadow: 0 6px 14px rgba(26, 95, 122, 0.25); }
-    .btn-primary:disabled { opacity: 0.5; pointer-events: none; filter: grayscale(0.3); }
-    .bonus-grid { display: flex; flex-direction: column; gap: 10px; align-items: center; }
-    .bonus-row { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: #1d4b62; background: white; padding: 0.3rem 0.8rem; border-radius: 30px; border: 1px dashed #3f8db0; }
-    .bonus-row.claimed { background: #d4edda; border-color: #25D366; color: #1a7f5a; border-style: solid; }
-    .bonus-row.claimed::after { content: ' ✓'; font-weight: 700; }
+
+    /* ===== UNLOCK BOX ===== */
+    .unlock-box { background: #f0f7fe; border-radius: 1.5rem; padding: 1.3rem 1rem 1rem; text-align: center; border: 1.5px dashed #3f8db0; margin: 0.5rem 0 1.2rem; }
+    .unlock-box .unlock-heading { font-size: 1rem; color: #0b2b40; margin-bottom: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .unlock-box .unlock-heading i { color: #1a5f7a; }
+    .channel-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 340px; margin: 0 auto 10px; padding: 1rem 1.4rem; border-radius: 60px; font-size: 1rem; font-weight: 700; text-decoration: none; color: white; transition: all 0.15s; cursor: pointer; border: none; }
+    .channel-btn:active { transform: scale(0.97); }
+    .channel-btn.ch1 { background: #4ade80; box-shadow: 0 6px 14px rgba(74, 222, 128, 0.4); }
+    .channel-btn.ch1:active { background: #22c55e; }
+    .channel-btn.ch2 { background: #14919b; box-shadow: 0 6px 14px rgba(20, 145, 155, 0.35); }
+    .channel-btn.ch2:active { background: #0e7278; }
+    .channel-btn.joined { opacity: 0.55; }
+    .channel-btn i { font-size: 1.15rem; }
+
+    .unlock-status-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 12px 0 10px; flex-wrap: wrap; }
+    .badge-unlocked { background: #25D366; color: white; border-radius: 40px; padding: 0.35rem 1rem; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+    .badge-locked { background: #8fabbc; color: white; border-radius: 40px; padding: 0.35rem 1rem; font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+    .unlock-status-row .status-text { font-size: 0.85rem; color: #3f637a; font-weight: 500; }
+
+    .unlock-footer { background: #d4edda; border: 1.5px solid #25D366; border-radius: 40px; padding: 0.6rem 1rem; margin-top: 6px; font-size: 0.85rem; font-weight: 700; color: #1a7f5a; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .unlock-footer.locked-state { background: #fef3c7; border-color: #f59e0b; color: #92400e; }
+    .unlock-footer i { font-size: 0.9rem; }
+    .unlock-footer .check { margin-left: auto; }
+
+    /* ===== SUBJECT GRID ===== */
     .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; margin: 12px 0 8px; }
-    .subject-item { background: #f8fafc; border-radius: 30px; padding: 0.6rem 0.2rem; text-align: center; font-size: 0.8rem; font-weight: 500; color: #1d3b4f; border: 1px solid #dee8f0; transition: all 0.1s; box-shadow: 0 1px 3px rgba(0,0,0,0.02); cursor: pointer; position: relative; }
+    .subject-item { background: #f8fafc; border-radius: 30px; padding: 0.6rem 0.2rem; text-align: center; font-size: 0.8rem; font-weight: 500; color: #1d3b4f; border: 1px solid #dee8f0; transition: all 0.1s; cursor: pointer; position: relative; }
     .subject-item i { color: #2a7f9f; margin-right: 4px; }
-    .subject-item.active { background: #1a5f7a; color: white; border-color: #1a5f7a; }
-    .subject-item.active i { color: white; }
     .subject-item.selected { background: #25D366; color: white; border-color: #25D366; }
     .subject-item.selected i { color: white; }
     .subject-item.selected::after { content: '✓'; position: absolute; top: -4px; right: -4px; background: #0b2b40; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.65rem; display: flex; align-items: center; justify-content: center; font-weight: 700; }
     .subject-info { display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border-radius: 1rem; padding: 0.6rem 0.9rem; margin: 8px 0; font-size: 0.8rem; color: #3f637a; }
     .subject-info strong { color: #1a5f7a; }
+
+    /* ===== SHARE ===== */
     .share-section { background: #f2f6fa; border-radius: 1.5rem; padding: 1rem 1rem 0.8rem; margin: 1.2rem 0 0.5rem; }
     .share-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0 6px; }
-    .share-btn { background: white; border-radius: 40px; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0dde8; display: inline-flex; align-items: center; gap: 6px; color: #1f4960; cursor: pointer; transition: 0.1s; box-shadow: 0 2px 4px rgba(0,0,0,0.02); text-decoration: none; }
+    .share-btn { background: white; border-radius: 40px; padding: 0.4rem 1rem; font-size: 0.8rem; font-weight: 500; border: 1px solid #d0dde8; display: inline-flex; align-items: center; gap: 6px; color: #1f4960; cursor: pointer; transition: 0.1s; text-decoration: none; }
     .share-btn:active { background: #e3edf5; transform: scale(0.96); }
     .share-btn.claimed { background: #d4edda; border-color: #25D366; color: #1a7f5a; }
     .share-btn.claimed::after { content: ' ✓'; font-weight: 700; }
     .share-btn:disabled { opacity: 0.55; cursor: not-allowed; }
-    .contact-card { margin-top: 1.2rem; background: #eaf3fa; border-radius: 2rem; padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 10px; border: 1px solid #bdd7e8; }
-    .contact-card .contact-title { font-weight: 600; color: #0b2a3b; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
-    .contact-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
-    .contact-card a { border-radius: 40px; padding: 0.5rem 1.1rem; font-size: 0.8rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: white; }
-    .contact-card a.wa { background: #075e54; }
-    .contact-card a.tg { background: #229ED9; }
-    .footer-note { text-align: center; font-size: 0.75rem; color: #6f8b9c; margin-top: 1.5rem; border-top: 1px solid #e2eaf0; padding-top: 1rem; }
-    .footer-note a { color: #1a5f7a; font-weight: 700; text-decoration: none; }
-    .footer-note a:hover { text-decoration: underline; }
-    .badge-unlocked { background: #25D366; color: white; border-radius: 40px; padding: 0.2rem 0.9rem; font-size: 0.7rem; font-weight: 600; display: inline-block; }
-    .text-small { font-size: 0.8rem; color: #3f637a; }
-    .referral-card { background: linear-gradient(135deg, #e0f2fe, #f0f7fe); border-radius: 1.5rem; padding: 1rem 1rem 0.9rem; margin: 1rem 0; border: 1px solid #bae6fd; }
-    .referral-card .card-title i { color: #0284c7; }
-    .referral-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
-    .referral-input { flex: 1; min-width: 180px; padding: 0.6rem 0.9rem; border-radius: 30px; border: 1px solid #bae6fd; background: white; font-size: 0.8rem; color: #0c4a6e; font-weight: 500; outline: none; }
-    .btn-copy { background: #0284c7; color: white; border: none; padding: 0.6rem 1.1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-    .btn-copy:active { background: #0369a1; }
+    .bonus-grid { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .bonus-row { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; font-weight: 600; color: #1d4b62; background: white; padding: 0.3rem 0.8rem; border-radius: 30px; border: 1px dashed #3f8db0; }
+    .bonus-row.claimed { background: #d4edda; border-color: #25D366; color: #1a7f5a; border-style: solid; }
+    .bonus-row.claimed::after { content: ' ✓'; font-weight: 700; }
 
-    /* ============ BUY POINTS ============ */
+    .btn-whatsapp { background: #25D366; border: none; color: white; font-weight: 600; padding: 0.9rem 1.5rem; border-radius: 60px; font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; max-width: 320px; transition: all 0.15s; box-shadow: 0 6px 14px rgba(37, 211, 102, 0.25); cursor: pointer; text-decoration: none; }
+    .btn-whatsapp:active { transform: scale(0.96); background: #1fa854; }
+    .btn-telegram { background: #229ED9; box-shadow: 0 6px 14px rgba(34, 158, 217, 0.25); }
+
+    .btn-block { width: 100%; justify-content: center; border: none; padding: 0.9rem; border-radius: 60px; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 10px; transition: all 0.15s; cursor: pointer; text-decoration: none; }
+    .btn-primary { background: #1a5f7a; color: white; box-shadow: 0 6px 14px rgba(26, 95, 122, 0.25); }
+    .btn-primary:disabled { opacity: 0.5; pointer-events: none; filter: grayscale(0.3); }
+
+    /* ===== BUY POINTS ===== */
     .buy-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 1.5rem; padding: 1.2rem 1rem; margin: 1rem 0; border: 1px solid #6ee7b7; }
     .buy-card .card-title i { color: #059669; }
     .uid-box { background: white; border-radius: 1rem; padding: 0.7rem 0.9rem; margin: 8px 0 12px; border: 1px dashed #10b981; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -86,44 +92,53 @@
     .btn-buy:active { background: #047857; }
     .custom-bonus-note { font-size: 0.75rem; color: #059669; font-weight: 600; margin-top: 6px; display: none; }
     .custom-bonus-note.show { display: block; }
-
     .pin-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
     .pin-input { flex: 1; min-width: 180px; padding: 0.8rem 1rem; border-radius: 30px; border: 2px solid #34d399; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; outline: none; color: #065f46; }
     .btn-activate { background: #1a5f7a; color: white; border: none; padding: 0.8rem 1.3rem; border-radius: 30px; font-size: 0.9rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-activate:active { background: #134a5f; }
 
     /* SELL POINTS */
     .sell-card { background: #f3f4f6; border-radius: 1.5rem; padding: 1.2rem 1rem; margin: 1rem 0; border: 1px dashed #9ca3af; opacity: 0.75; }
     .sell-card .card-title i { color: #6b7280; }
-    .sell-card .text-small { color: #6b7280; }
+
+    .contact-card { margin-top: 1.2rem; background: #eaf3fa; border-radius: 2rem; padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 10px; border: 1px solid #bdd7e8; }
+    .contact-card .contact-title { font-weight: 600; color: #0b2a3b; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+    .contact-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .contact-card a { border-radius: 40px; padding: 0.5rem 1.1rem; font-size: 0.8rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: white; }
+    .contact-card a.wa { background: #075e54; }
+    .contact-card a.tg { background: #229ED9; }
+    .footer-note { text-align: center; font-size: 0.75rem; color: #6f8b9c; margin-top: 1.5rem; border-top: 1px solid #e2eaf0; padding-top: 1rem; }
+    .footer-note a { color: #1a5f7a; font-weight: 700; text-decoration: none; }
+    .text-small { font-size: 0.8rem; color: #3f637a; }
+    .referral-card { background: linear-gradient(135deg, #e0f2fe, #f0f7fe); border-radius: 1.5rem; padding: 1rem 1rem 0.9rem; margin: 1rem 0; border: 1px solid #bae6fd; }
+    .referral-card .card-title i { color: #0284c7; }
+    .referral-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .referral-input { flex: 1; min-width: 180px; padding: 0.6rem 0.9rem; border-radius: 30px; border: 1px solid #bae6fd; background: white; font-size: 0.8rem; color: #0c4a6e; font-weight: 500; outline: none; }
+    .btn-copy { background: #0284c7; color: white; border: none; padding: 0.6rem 1.1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 
     .quiz-screen { display: none; }
     .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e9edf2; }
-    .quiz-header .subject-name { font-weight: 700; color: #1a5f7a; font-size: 1rem; display: flex; align-items: center; gap: 6px; }
-    .timer { background: #fff3cd; color: #856404; padding: 0.3rem 0.9rem; border-radius: 30px; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+    .quiz-header .subject-name { font-weight: 700; color: #1a5f7a; font-size: 1rem; }
+    .timer { background: #fff3cd; color: #856404; padding: 0.3rem 0.9rem; border-radius: 30px; font-weight: 700; font-size: 0.85rem; }
     .timer.warning { background: #f8d7da; color: #721c24; }
     .progress-bar { width: 100%; height: 8px; background: #e9edf2; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; }
     .progress-fill { height: 100%; background: #1a5f7a; width: 0%; transition: width 0.3s; }
     .question-counter { font-size: 0.8rem; color: #3f637a; font-weight: 600; margin-bottom: 0.5rem; }
     .question-text { font-size: 1.05rem; color: #0b2b40; font-weight: 600; line-height: 1.5; margin-bottom: 1.2rem; padding: 0.9rem; background: #f8fafc; border-radius: 1rem; border-left: 4px solid #1a5f7a; }
     .options { display: flex; flex-direction: column; gap: 10px; }
-    .option { background: white; border: 2px solid #dee8f0; border-radius: 1rem; padding: 0.9rem 1rem; font-size: 0.95rem; color: #1d3b4f; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 12px; }
-    .option:hover { border-color: #1a5f7a; background: #f0f7fe; }
+    .option { background: white; border: 2px solid #dee8f0; border-radius: 1rem; padding: 0.9rem 1rem; font-size: 0.95rem; color: #1d3b4f; cursor: pointer; display: flex; align-items: center; gap: 12px; }
     .option.selected { background: #1a5f7a; color: white; border-color: #1a5f7a; }
     .option .letter { background: #eaf0f5; color: #1a5f7a; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
     .option.selected .letter { background: white; }
     .quiz-nav { display: flex; gap: 10px; margin-top: 1.5rem; }
-    .quiz-nav button { flex: 1; padding: 0.9rem; border-radius: 60px; border: none; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: 0.15s; }
+    .quiz-nav button { flex: 1; padding: 0.9rem; border-radius: 60px; border: none; font-weight: 600; font-size: 0.95rem; cursor: pointer; }
     .btn-next { background: #1a5f7a; color: white; }
     .btn-next:disabled { opacity: 0.4; cursor: not-allowed; }
     .btn-prev { background: #eaf0f5; color: #1d4b62; }
     .btn-submit { background: #25D366; color: white; }
     .result-screen { display: none; text-align: center; padding: 1.5rem 1rem; }
-    .result-screen .score-circle { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, #1a5f7a, #25D366); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 1.2rem; color: white; box-shadow: 0 10px 25px rgba(26,95,122,0.3); }
+    .result-screen .score-circle { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, #1a5f7a, #25D366); display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 1.2rem; color: white; }
     .result-screen .score-circle .num { font-size: 2.5rem; font-weight: 700; line-height: 1; }
     .result-screen .score-circle .lbl { font-size: 0.8rem; opacity: 0.9; margin-top: 4px; }
-    .result-screen h2 { color: #0b2b40; margin-bottom: 0.5rem; }
-    .result-screen p { color: #3f637a; margin-bottom: 1.2rem; }
     .review-item { text-align: left; background: #f8fafc; border-radius: 1rem; padding: 0.9rem; margin-bottom: 10px; border-left: 4px solid #dee8f0; }
     .review-item.correct { border-left-color: #25D366; }
     .review-item.wrong { border-left-color: #dc3545; }
@@ -131,7 +146,7 @@
     .review-item .ans { font-size: 0.8rem; color: #3f637a; }
     .review-item .ans .user-wrong { color: #dc3545; text-decoration: line-through; }
     .review-item .ans .correct-ans { color: #1a7f5a; font-weight: 600; }
-    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #0b2b40; color: white; padding: 0.7rem 1.3rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,0.25); opacity: 0; transition: all 0.3s; z-index: 999; display: flex; align-items: center; gap: 8px; max-width: 90vw; }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #0b2b40; color: white; padding: 0.7rem 1.3rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; opacity: 0; transition: all 0.3s; z-index: 999; display: flex; align-items: center; gap: 8px; max-width: 90vw; }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
     .toast.green { background: #25D366; }
     .toast.red { background: #dc3545; }
@@ -164,20 +179,29 @@
       </div>
     </div>
 
-    <!-- DAILY UNLOCK -->
+    <!-- UNLOCK BOX (new clean design) -->
     <div class="unlock-box" id="unlockBox">
-      <p><i class="fas fa-lock" style="margin-right: 6px;"></i> <strong>🔐 Daily Join & Unlock</strong> — join both channels today to unlock quizzes</p>
-      <div class="bonus-grid">
-        <a href="https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" target="_blank" class="btn-whatsapp" id="channel1Btn"><i class="fab fa-whatsapp"></i> Join WhatsApp Channel 1</a>
-        <a href="https://whatsapp.com/channel/0029Vb8HCZE6rsR1fthNok1P" target="_blank" class="btn-whatsapp" id="channel2Btn" style="background: #128C7E; box-shadow: 0 6px 14px rgba(18, 140, 126, 0.25);"><i class="fab fa-whatsapp"></i> Join WhatsApp Channel 2</a>
+      <div class="unlock-heading"><i class="fas fa-lock"></i> Join &amp; unlock — join channels to access quizzes</div>
 
-        <div style="margin: 8px 0 2px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
-          <span class="badge-unlocked" id="unlockStatus" style="background: #8fabbc;"><i class="fas fa-lock"></i> locked</span>
-          <span class="text-small">join both channels daily to start</span>
-        </div>
+      <a href="https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" target="_blank" class="channel-btn ch1" id="channel1Btn">
+        <i class="fab fa-whatsapp"></i> Join WhatsApp Channel 1
+      </a>
+      <a href="https://whatsapp.com/channel/0029Vb8HCZE6rsR1fthNok1P" target="_blank" class="channel-btn ch2" id="channel2Btn">
+        <i class="fab fa-whatsapp"></i> Join WhatsApp Channel 2
+      </a>
 
-        <div class="bonus-row" id="bonusRow15" style="margin-top: 4px;"><i class="fas fa-star"></i> 15 pts bonus for both channels (once only)</div>
+      <div class="unlock-status-row">
+        <span class="badge-locked" id="unlockStatus"><i class="fas fa-lock"></i> locked</span>
+        <span class="status-text" id="unlockStatusText">Join both channels daily to start</span>
       </div>
+
+      <div class="unlock-footer locked-state" id="unlockFooter">
+        <i class="fas fa-lock"></i>
+        <span id="unlockFooterText">Join both channels daily to unlock quizzes</span>
+        <span class="check" id="unlockFooterCheck" style="display:none;">✓</span>
+      </div>
+
+      <div class="bonus-row" id="bonusRow15" style="margin-top: 12px;"><i class="fas fa-star"></i> 15 pts bonus for both channels (once only)</div>
     </div>
 
     <!-- SUBJECTS -->
@@ -224,7 +248,7 @@
 
     <!-- SHARE -->
     <div class="share-section">
-      <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: #1d3b4f;"><i class="fas fa-share-alt" style="color: #2a7f9f;"></i> Share & earn 10 pts each (daily)</div>
+      <div style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: #1d3b4f;"><i class="fas fa-share-alt" style="color: #2a7f9f;"></i> Share &amp; earn 10 pts each (daily)</div>
       <div class="share-row">
         <a class="share-btn" data-share="friends" href="https://api.whatsapp.com/send?text=🎓 *JAMB Questions* Join me on JAMB Quiz builder!%0Ahttps://jamb-lab.netlify.app%0A%0AJoin our tutorial class 👇%0Ahttps://whatsapp.com/channel/0029VbD2bkWLNSZwxGpz2k0x" target="_blank"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Friends</a>
         <a class="share-btn" data-share="groups" href="https://api.whatsapp.com/send?text=📚 *JAMB daily drills* Join our WhatsApp channel for UTME prep! https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" target="_blank"><i class="fas fa-users" style="color: #2a7f9f;"></i> Groups</a>
@@ -239,21 +263,18 @@
       <p class="text-small" style="margin-bottom: 10px;"><strong>Join AND share</strong> these channels to your friends — invite them so everyone can participate and earn together. Points rewarded once.</p>
       <div class="bonus-grid">
         <a href="https://t.me/jambvip" target="_blank" class="btn-whatsapp btn-telegram" id="tgChannelBtn"><i class="fab fa-telegram"></i> Join JAMB Telegram (+15 pts)</a>
-        <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp" id="waecChannelBtn" style="background: #16a34a; box-shadow: 0 6px 14px rgba(22, 163, 74, 0.25);"><i class="fab fa-whatsapp"></i> Join WAEC Tutorial Channel (+10 pts)</a>
-        <a href="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" target="_blank" class="btn-whatsapp" id="jambTutChannelBtn" style="background: #0e7490; box-shadow: 0 6px 14px rgba(14, 116, 144, 0.25);"><i class="fab fa-whatsapp"></i> Join JAMB Tutorial Channel (+10 pts)</a>
-        <a href="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" target="_blank" class="btn-whatsapp" id="jambVipChannelBtn" style="background: #7c3aed; box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);"><i class="fab fa-whatsapp"></i> Join JAMB VIP Channel (+15 pts)</a>
+        <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp" id="waecChannelBtn" style="background: #16a34a;"><i class="fab fa-whatsapp"></i> Join WAEC Tutorial Channel (+10 pts)</a>
+        <a href="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" target="_blank" class="btn-whatsapp" id="jambTutChannelBtn" style="background: #0e7490;"><i class="fab fa-whatsapp"></i> Join JAMB Tutorial Channel (+10 pts)</a>
+        <a href="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" target="_blank" class="btn-whatsapp" id="jambVipChannelBtn" style="background: #7c3aed;"><i class="fab fa-whatsapp"></i> Join JAMB VIP Channel (+15 pts)</a>
 
         <div class="bonus-row" id="bonusRowTg"><i class="fas fa-paper-plane"></i> 15 pts for JAMB Telegram</div>
         <div class="bonus-row" id="bonusRowWaec"><i class="fas fa-graduation-cap"></i> 10 pts for WAEC Tutorial</div>
         <div class="bonus-row" id="bonusRowJambTut"><i class="fas fa-chalkboard-teacher"></i> 10 pts for JAMB Tutorial</div>
         <div class="bonus-row" id="bonusRowVip"><i class="fas fa-crown"></i> 15 pts for JAMB VIP Channel</div>
       </div>
-      <p class="text-small" style="margin-top: 12px; text-align: center; background: #fef3c7; padding: 0.5rem; border-radius: 30px;">
-        <i class="fas fa-share-alt" style="color: #f59e0b;"></i> <strong>Remember:</strong> Join and share these channels with friends!
-      </p>
     </div>
 
-    <!-- ⭐ BUY POINTS (MOVED BELOW BONUS CHANNELS) -->
+    <!-- BUY POINTS -->
     <div class="buy-card">
       <div class="card-title"><i class="fas fa-shopping-cart"></i> Buy Points · <span style="color:#059669;">+10% bonus on every purchase</span></div>
 
@@ -265,7 +286,7 @@
         <button class="btn-copy-uid" id="copyUidBtn"><i class="fas fa-copy"></i> Copy ID</button>
       </div>
 
-      <p class="text-small" style="margin-bottom: 6px;"><i class="fas fa-info-circle"></i> Select a package or enter a custom amount, then send payment + your User ID to us. We'll reply with an <strong>activation PIN</strong>.</p>
+      <p class="text-small" style="margin-bottom: 6px;"><i class="fas fa-info-circle"></i> Select a package or enter a custom amount — a WhatsApp message will open with your order details ready to send.</p>
 
       <div class="package-grid">
         <div class="package-item" data-pts="50" data-price="500">
@@ -290,7 +311,7 @@
 
       <div class="custom-row">
         <input type="number" class="custom-input" id="customPtsInput" placeholder="Enter points needed (e.g. 250)" min="1" step="1">
-        <button class="btn-buy" id="customBuyBtn"><i class="fas fa-paper-plane"></i> Request</button>
+        <button class="btn-buy" id="customBuyBtn"><i class="fab fa-whatsapp"></i> Buy now</button>
       </div>
       <div class="custom-bonus-note" id="customBonusNote"></div>
 
@@ -302,17 +323,9 @@
         </div>
         <div class="text-small" style="margin-top: 6px;">PINs are single-use and tied to a specific amount (already includes your 10% bonus).</div>
       </div>
-
-      <div style="margin-top: 12px;">
-        <div class="text-small" style="margin-bottom: 6px;"><strong>Need points?</strong> Message us:</div>
-        <div class="contact-buttons">
-          <a href="https://wa.me/message/WHTP63YEENQ4C1" target="_blank" class="wa" style="background:#075e54;border-radius:40px;padding:0.5rem 1.1rem;font-size:0.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:white;"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
-          <a href="https://t.me/kingjay225" target="_blank" class="tg" style="background:#229ED9;border-radius:40px;padding:0.5rem 1.1rem;font-size:0.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:white;"><i class="fab fa-telegram"></i> Telegram us</a>
-        </div>
-      </div>
     </div>
 
-    <!-- SELL POINTS (Coming soon) -->
+    <!-- SELL POINTS -->
     <div class="sell-card">
       <div class="card-title"><i class="fas fa-hand-holding-usd"></i> Sell Points <span style="font-size:0.7rem;background:#9ca3af;color:white;padding:2px 8px;border-radius:20px;margin-left:auto;">Coming soon</span></div>
       <p class="text-small">Sell your points back for cash. This feature is not yet available — it will be enabled in a future update.</p>
@@ -378,7 +391,10 @@
       console.log("✅ quiz-data.js loaded. Subjects:", Object.keys(quizData));
     }
 
-    // ==================== POINTS ====================
+    // ==================== CONFIG ====================
+    const ADMIN_WHATSAPP = '234XXXXXXXXXX';  // 👈 REPLACE with your WhatsApp number in international format (no +, no spaces). Example: 2348012345678
+    const ADMIN_TELEGRAM = 'kingjay225';      // your Telegram username (without @)
+
     const POINTS = {
       UNLOCK_BONUS: 15,
       TG_CHANNEL_BONUS: 15,
@@ -390,19 +406,17 @@
       QUIZ_COST: 5,
       DAILY_TOPUP: 10,
       MIN_TO_TOPUP: 5,
-      PURCHASE_BONUS_PERCENT: 10   // 10% bonus on every purchase
+      PURCHASE_BONUS_PERCENT: 10
     };
     const QUIZ_LENGTH = 20;
     const TOTAL_TIME = 25 * 60;
 
     // ==================== 🔐 ACTIVATION PINS ====================
-    // ⚠️ IMPORTANT: PIN values here should ALREADY include the 10% bonus.
-    // E.g. user pays for 100 pts → you send a PIN worth 110.
-    // Format: "PIN-CODE": totalPointsToCredit
+    // PIN values already include the 10% bonus. Example: 50 pts purchase → PIN worth 55
     const ACTIVATION_PINS = {
-      "JAMB-A1B2-55":  55,     // 50 + 10% bonus
-      "JAMB-C3D4-110": 110,    // 100 + 10% bonus
-      "JAMB-E5F6-550": 550,    // 500 + 10% bonus
+      "JAMB-A1B2-55":  55,
+      "JAMB-C3D4-110": 110,
+      "JAMB-E5F6-550": 550,
       // 👉 Add more PINs here
     };
 
@@ -479,7 +493,7 @@
       toastTimer = setTimeout(() => { t.className = 'toast ' + color; }, 2600);
     }
 
-    // ==================== 🔐 PIN ACTIVATION ====================
+    // ==================== PIN ACTIVATION ====================
     function redeemPin(rawPin) {
       const pin = (rawPin || '').trim().toUpperCase();
       if (!pin) { showToast('❌ Enter a PIN', 'red'); return; }
@@ -496,7 +510,7 @@
     document.getElementById('activatePinBtn').addEventListener('click', () => redeemPin(document.getElementById('pinInput').value));
     document.getElementById('pinInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') redeemPin(document.getElementById('pinInput').value); });
 
-    // ==================== BUY POINTS UI ====================
+    // ==================== BUY POINTS ====================
     document.getElementById('uidDisplay').textContent = getUserId();
     document.getElementById('copyUidBtn').addEventListener('click', () => {
       const uid = getUserId();
@@ -504,22 +518,33 @@
       catch(e) { showToast('User ID: ' + uid, 'green'); }
     });
 
-    function requestPoints(pts, price, totalPts) {
+    // Build a clean auto-message with the requested points + user ID
+    function buildPurchaseMessage(basePts, bonusPts, totalPts, price) {
       const uid = getUserId();
-      const msg = `Hi! I want to buy *${pts} points* (₦${price.toLocaleString()}) on JAMBLab.\n\nWith +10% bonus → *${totalPts} points*\n\nMy User ID: *${uid}*\n\nPlease send me the activation PIN.`;
-      window.open('https://wa.me/message/WHTP63YEENQ4C1?text=' + encodeURIComponent(msg), '_blank');
+      return `Hello, I want to purchase *${basePts} points* for ₦${price.toLocaleString()} on JAMBLab.\n\n` +
+             `• Base points: ${basePts}\n` +
+             `• 10% bonus: +${bonusPts}\n` +
+             `• Total to credit: *${totalPts} points*\n` +
+             `• My User ID: *${uid}*\n\n` +
+             `Please send me the activation PIN. Thank you!`;
+    }
+
+    function openPurchase(basePts, price) {
+      const bonusPts = Math.floor(basePts * POINTS.PURCHASE_BONUS_PERCENT / 100);
+      const totalPts = basePts + bonusPts;
+      const msg = buildPurchaseMessage(basePts, bonusPts, totalPts, price);
+      const url = 'https://wa.me/' + ADMIN_WHATSAPP + '?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank');
     }
 
     document.querySelectorAll('.package-item').forEach(item => {
       item.addEventListener('click', () => {
         const pts = parseInt(item.dataset.pts, 10);
         const price = parseInt(item.dataset.price, 10);
-        const total = Math.floor(pts * (1 + POINTS.PURCHASE_BONUS_PERCENT / 100));
-        requestPoints(pts, price, total);
+        openPurchase(pts, price);
       });
     });
 
-    // Live bonus preview for custom input
     const customInput = document.getElementById('customPtsInput');
     const customBonusNote = document.getElementById('customBonusNote');
     customInput.addEventListener('input', () => {
@@ -535,26 +560,32 @@
     document.getElementById('customBuyBtn').addEventListener('click', () => {
       const rawPts = parseInt(customInput.value, 10);
       if (!rawPts || rawPts < 1) { showToast('❌ Enter a valid points amount', 'red'); return; }
-      const bonus = Math.floor(rawPts * POINTS.PURCHASE_BONUS_PERCENT / 100);
-      const total = rawPts + bonus;
       const price = rawPts * 10;
-      requestPoints(rawPts, price, total);
+      openPurchase(rawPts, price);
     });
 
-    // ==================== UNLOCK ====================
+    // ==================== UNLOCK (compulsory channels) ====================
     let unlocked = false;
     function checkUnlock() {
       const c1Today = claimedToday('ch1');
       const c2Today = claimedToday('ch2');
       const b1 = document.getElementById('channel1Btn');
       const b2 = document.getElementById('channel2Btn');
-      b1.style.opacity = c1Today ? '0.6' : '1';
-      b2.style.opacity = c2Today ? '0.6' : '1';
+
+      b1.classList.toggle('joined', c1Today);
+      b2.classList.toggle('joined', c2Today);
 
       if (c1Today && c2Today) {
         unlocked = true;
-        document.getElementById('unlockStatus').innerHTML = '<i class="fas fa-unlock"></i> unlocked';
-        document.getElementById('unlockStatus').style.background = '#25D366';
+        const badge = document.getElementById('unlockStatus');
+        badge.className = 'badge-unlocked';
+        badge.innerHTML = '<i class="fas fa-check"></i> unlocked';
+        document.getElementById('unlockStatusText').textContent = 'Both WhatsApp channels joined';
+
+        const footer = document.getElementById('unlockFooter');
+        footer.className = 'unlock-footer';
+        footer.innerHTML = '<i class="fas fa-lock-open"></i><span>Quizzes unlocked — pick your subjects below</span><span class="check">✓</span>';
+
         if (isPermanentDone('unlockBonus')) document.getElementById('bonusRow15').classList.add('claimed');
         if (!isPermanentDone('unlockBonus')) {
           markPermanentDone('unlockBonus');
@@ -564,23 +595,31 @@
         }
       } else {
         unlocked = false;
-        document.getElementById('unlockStatus').innerHTML = '<i class="fas fa-lock"></i> locked';
-        document.getElementById('unlockStatus').style.background = '#8fabbc';
+        const badge = document.getElementById('unlockStatus');
+        badge.className = 'badge-locked';
+        badge.innerHTML = '<i class="fas fa-lock"></i> locked';
+        document.getElementById('unlockStatusText').textContent = 'Join both channels daily to start';
+
+        const footer = document.getElementById('unlockFooter');
+        footer.className = 'unlock-footer locked-state';
+        footer.innerHTML = '<i class="fas fa-lock"></i><span>Join both channels daily to unlock quizzes</span>';
+
         if (isPermanentDone('unlockBonus')) document.getElementById('bonusRow15').classList.add('claimed');
         else document.getElementById('bonusRow15').classList.remove('claimed');
       }
       updateStartButtonState();
     }
+
     document.getElementById('channel1Btn').addEventListener('click', () => {
-      if (claimedToday('ch1')) { showToast('Already joined today', 'red'); return; }
+      if (claimedToday('ch1')) { showToast('Already joined Channel 1 today', 'red'); return; }
       markClaimedToday('ch1');
-      showToast('✅ Channel 1 joined. Join Channel 2 to unlock!', 'green');
+      showToast('✅ Channel 1 joined. Now join Channel 2!', 'green');
       setTimeout(checkUnlock, 200);
     });
     document.getElementById('channel2Btn').addEventListener('click', () => {
-      if (claimedToday('ch2')) { showToast('Already joined today', 'red'); return; }
+      if (claimedToday('ch2')) { showToast('Already joined Channel 2 today', 'red'); return; }
       markClaimedToday('ch2');
-      showToast('✅ Channel 2 joined. Unlocking now…', 'green');
+      showToast('✅ Channel 2 joined. Unlocking…', 'green');
       setTimeout(checkUnlock, 200);
     });
     document.addEventListener('visibilitychange', () => { if (!document.hidden) { checkUnlock(); refreshUI(); } });
@@ -609,15 +648,12 @@
     setupBonusBtn('jambTutChannelBtn', 'jambtut', POINTS.JAMB_TUTORIAL_BONUS, 'JAMB Tutorial');
     setupBonusBtn('jambVipChannelBtn', 'vip', POINTS.JAMB_VIP_BONUS, 'JAMB VIP Channel');
 
-    // ==================== SHARE (daily reset) ====================
+    // ==================== SHARE ====================
     function refreshUI() {
       document.querySelectorAll('.share-btn[data-share]').forEach(btn => {
         const key = 'share_' + btn.dataset.share;
-        if (claimedToday(key)) {
-          btn.classList.add('claimed'); btn.setAttribute('disabled', 'true');
-        } else {
-          btn.classList.remove('claimed'); btn.removeAttribute('disabled');
-        }
+        if (claimedToday(key)) { btn.classList.add('claimed'); btn.setAttribute('disabled', 'true'); }
+        else { btn.classList.remove('claimed'); btn.removeAttribute('disabled'); }
       });
       checkUnlock();
     }
@@ -703,7 +739,6 @@
       return map[name] || name.toLowerCase();
     }
 
-    // ==================== SHUFFLE ====================
     function shuffleArray(arr) {
       const a = arr.slice();
       for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
@@ -714,8 +749,6 @@
       const shuffled = shuffleArray(q.options);
       return { question: q.question, options: shuffled, correct: shuffled.indexOf(correctText) };
     }
-
-    // ==================== BALANCED POOL ====================
     function buildBalancedPool(subjects) {
       const pools = {};
       subjects.forEach(subj => {
