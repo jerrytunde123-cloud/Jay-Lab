@@ -65,6 +65,38 @@
     .referral-input { flex: 1; min-width: 180px; padding: 0.6rem 0.9rem; border-radius: 30px; border: 1px solid #bae6fd; background: white; font-size: 0.8rem; color: #0c4a6e; font-weight: 500; outline: none; }
     .btn-copy { background: #0284c7; color: white; border: none; padding: 0.6rem 1.1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
     .btn-copy:active { background: #0369a1; }
+
+    /* ============ BUY POINTS ============ */
+    .buy-card { background: linear-gradient(135deg, #ecfdf5, #d1fae5); border-radius: 1.5rem; padding: 1.2rem 1rem; margin: 1rem 0; border: 1px solid #6ee7b7; }
+    .buy-card .card-title i { color: #059669; }
+    .uid-box { background: white; border-radius: 1rem; padding: 0.7rem 0.9rem; margin: 8px 0 12px; border: 1px dashed #10b981; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .uid-box .label { font-size: 0.75rem; color: #047857; font-weight: 600; }
+    .uid-box .uid-value { font-family: monospace; font-size: 1rem; font-weight: 700; color: #065f46; letter-spacing: 1px; }
+    .btn-copy-uid { background: #10b981; color: white; border: none; padding: 0.35rem 0.9rem; border-radius: 30px; font-size: 0.75rem; font-weight: 600; cursor: pointer; }
+    .package-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin: 10px 0; }
+    .package-item { background: white; border-radius: 1rem; padding: 0.8rem 0.6rem; text-align: center; border: 2px solid #a7f3d0; cursor: pointer; transition: all 0.15s; position: relative; }
+    .package-item:hover { border-color: #10b981; transform: translateY(-2px); }
+    .package-item .pts { font-size: 1.3rem; font-weight: 700; color: #065f46; }
+    .package-item .bonus { font-size: 0.7rem; color: #059669; font-weight: 700; background: #d1fae5; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-top: 4px; }
+    .package-item .price { font-size: 0.85rem; color: #047857; font-weight: 600; margin-top: 6px; }
+    .package-item .label { font-size: 0.7rem; color: #6b7280; margin-top: 2px; }
+    .custom-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .custom-input { flex: 1; min-width: 130px; padding: 0.7rem 0.9rem; border-radius: 30px; border: 1px solid #a7f3d0; font-size: 0.85rem; outline: none; color: #065f46; font-weight: 600; }
+    .btn-buy { background: #059669; color: white; border: none; padding: 0.7rem 1.2rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-buy:active { background: #047857; }
+    .custom-bonus-note { font-size: 0.75rem; color: #059669; font-weight: 600; margin-top: 6px; display: none; }
+    .custom-bonus-note.show { display: block; }
+
+    .pin-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .pin-input { flex: 1; min-width: 180px; padding: 0.8rem 1rem; border-radius: 30px; border: 2px solid #34d399; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; outline: none; color: #065f46; }
+    .btn-activate { background: #1a5f7a; color: white; border: none; padding: 0.8rem 1.3rem; border-radius: 30px; font-size: 0.9rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-activate:active { background: #134a5f; }
+
+    /* SELL POINTS */
+    .sell-card { background: #f3f4f6; border-radius: 1.5rem; padding: 1.2rem 1rem; margin: 1rem 0; border: 1px dashed #9ca3af; opacity: 0.75; }
+    .sell-card .card-title i { color: #6b7280; }
+    .sell-card .text-small { color: #6b7280; }
+
     .quiz-screen { display: none; }
     .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e9edf2; }
     .quiz-header .subject-name { font-weight: 700; color: #1a5f7a; font-size: 1rem; display: flex; align-items: center; gap: 6px; }
@@ -144,7 +176,7 @@
           <span class="text-small">join both channels daily to start</span>
         </div>
 
-        <div class="bonus-row" id="bonusRow15" style="margin-top: 4px;"><i class="fas fa-star"></i> 15 pts bonus for both channels (daily)</div>
+        <div class="bonus-row" id="bonusRow15" style="margin-top: 4px;"><i class="fas fa-star"></i> 15 pts bonus for both channels (once only)</div>
       </div>
     </div>
 
@@ -204,7 +236,7 @@
     <!-- BONUS CHANNELS -->
     <div class="card" style="background: #f0f7fe; border: 1px solid #bae6fd;">
       <div class="card-title"><i class="fas fa-gift" style="color: #0284c7;"></i> More channels · earn bonus points</div>
-      <p class="text-small" style="margin-bottom: 10px;"><strong>Join AND share</strong> these channels to your friends — invite them so everyone can participate and earn together. Rewards reset daily.</p>
+      <p class="text-small" style="margin-bottom: 10px;"><strong>Join AND share</strong> these channels to your friends — invite them so everyone can participate and earn together. Points rewarded once.</p>
       <div class="bonus-grid">
         <a href="https://t.me/jambvip" target="_blank" class="btn-whatsapp btn-telegram" id="tgChannelBtn"><i class="fab fa-telegram"></i> Join JAMB Telegram (+15 pts)</a>
         <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp" id="waecChannelBtn" style="background: #16a34a; box-shadow: 0 6px 14px rgba(22, 163, 74, 0.25);"><i class="fab fa-whatsapp"></i> Join WAEC Tutorial Channel (+10 pts)</a>
@@ -219,6 +251,71 @@
       <p class="text-small" style="margin-top: 12px; text-align: center; background: #fef3c7; padding: 0.5rem; border-radius: 30px;">
         <i class="fas fa-share-alt" style="color: #f59e0b;"></i> <strong>Remember:</strong> Join and share these channels with friends!
       </p>
+    </div>
+
+    <!-- ⭐ BUY POINTS (MOVED BELOW BONUS CHANNELS) -->
+    <div class="buy-card">
+      <div class="card-title"><i class="fas fa-shopping-cart"></i> Buy Points · <span style="color:#059669;">+10% bonus on every purchase</span></div>
+
+      <div class="uid-box">
+        <div>
+          <div class="label">YOUR USER ID</div>
+          <div class="uid-value" id="uidDisplay">------</div>
+        </div>
+        <button class="btn-copy-uid" id="copyUidBtn"><i class="fas fa-copy"></i> Copy ID</button>
+      </div>
+
+      <p class="text-small" style="margin-bottom: 6px;"><i class="fas fa-info-circle"></i> Select a package or enter a custom amount, then send payment + your User ID to us. We'll reply with an <strong>activation PIN</strong>.</p>
+
+      <div class="package-grid">
+        <div class="package-item" data-pts="50" data-price="500">
+          <div class="pts">50 pts</div>
+          <div class="bonus">+5 BONUS</div>
+          <div class="price">₦500</div>
+          <div class="label">Starter → 55 pts</div>
+        </div>
+        <div class="package-item" data-pts="100" data-price="1000">
+          <div class="pts">100 pts</div>
+          <div class="bonus">+10 BONUS</div>
+          <div class="price">₦1,000</div>
+          <div class="label">Popular → 110 pts</div>
+        </div>
+        <div class="package-item" data-pts="500" data-price="5000">
+          <div class="pts">500 pts</div>
+          <div class="bonus">+50 BONUS</div>
+          <div class="price">₦5,000</div>
+          <div class="label">Best value → 550 pts</div>
+        </div>
+      </div>
+
+      <div class="custom-row">
+        <input type="number" class="custom-input" id="customPtsInput" placeholder="Enter points needed (e.g. 250)" min="1" step="1">
+        <button class="btn-buy" id="customBuyBtn"><i class="fas fa-paper-plane"></i> Request</button>
+      </div>
+      <div class="custom-bonus-note" id="customBonusNote"></div>
+
+      <div style="background: white; border-radius: 1rem; padding: 0.8rem 1rem; margin-top: 12px; border: 1px solid #a7f3d0;">
+        <div style="font-weight: 700; color: #065f46; font-size: 0.85rem; margin-bottom: 4px;"><i class="fas fa-key"></i> Have an activation PIN?</div>
+        <div class="pin-row">
+          <input type="text" class="pin-input" id="pinInput" placeholder="JAMB-XXXX-100">
+          <button class="btn-activate" id="activatePinBtn"><i class="fas fa-unlock"></i> Activate</button>
+        </div>
+        <div class="text-small" style="margin-top: 6px;">PINs are single-use and tied to a specific amount (already includes your 10% bonus).</div>
+      </div>
+
+      <div style="margin-top: 12px;">
+        <div class="text-small" style="margin-bottom: 6px;"><strong>Need points?</strong> Message us:</div>
+        <div class="contact-buttons">
+          <a href="https://wa.me/message/WHTP63YEENQ4C1" target="_blank" class="wa" style="background:#075e54;border-radius:40px;padding:0.5rem 1.1rem;font-size:0.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:white;"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
+          <a href="https://t.me/kingjay225" target="_blank" class="tg" style="background:#229ED9;border-radius:40px;padding:0.5rem 1.1rem;font-size:0.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:white;"><i class="fab fa-telegram"></i> Telegram us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SELL POINTS (Coming soon) -->
+    <div class="sell-card">
+      <div class="card-title"><i class="fas fa-hand-holding-usd"></i> Sell Points <span style="font-size:0.7rem;background:#9ca3af;color:white;padding:2px 8px;border-radius:20px;margin-left:auto;">Coming soon</span></div>
+      <p class="text-small">Sell your points back for cash. This feature is not yet available — it will be enabled in a future update.</p>
     </div>
 
     <!-- CONTACT -->
@@ -283,7 +380,7 @@
 
     // ==================== POINTS ====================
     const POINTS = {
-      UNLOCK_BONUS: 15,          // awarded once per day when BOTH channels joined
+      UNLOCK_BONUS: 15,
       TG_CHANNEL_BONUS: 15,
       WAEC_CHANNEL_BONUS: 10,
       JAMB_TUTORIAL_BONUS: 10,
@@ -292,22 +389,32 @@
       REFERRAL_REWARD: 10,
       QUIZ_COST: 5,
       DAILY_TOPUP: 10,
-      MIN_TO_TOPUP: 5
+      MIN_TO_TOPUP: 5,
+      PURCHASE_BONUS_PERCENT: 10   // 10% bonus on every purchase
     };
     const QUIZ_LENGTH = 20;
     const TOTAL_TIME = 25 * 60;
 
-    // ==================== DATE KEY (daily reset) ====================
+    // ==================== 🔐 ACTIVATION PINS ====================
+    // ⚠️ IMPORTANT: PIN values here should ALREADY include the 10% bonus.
+    // E.g. user pays for 100 pts → you send a PIN worth 110.
+    // Format: "PIN-CODE": totalPointsToCredit
+    const ACTIVATION_PINS = {
+      "JAMB-A1B2-55":  55,     // 50 + 10% bonus
+      "JAMB-C3D4-110": 110,    // 100 + 10% bonus
+      "JAMB-E5F6-550": 550,    // 500 + 10% bonus
+      // 👉 Add more PINs here
+    };
+
+    // ==================== DATE HELPERS ====================
     function todayKey() {
       const d = new Date();
       return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
     }
-    function claimedToday(taskKey) {
-      return localStorage.getItem('jamb_daily_' + taskKey) === todayKey();
-    }
-    function markClaimedToday(taskKey) {
-      localStorage.setItem('jamb_daily_' + taskKey, todayKey());
-    }
+    function claimedToday(taskKey) { return localStorage.getItem('jamb_daily_' + taskKey) === todayKey(); }
+    function markClaimedToday(taskKey) { localStorage.setItem('jamb_daily_' + taskKey, todayKey()); }
+    function isPermanentDone(key) { return localStorage.getItem('jamb_perm_' + key) === 'yes'; }
+    function markPermanentDone(key) { localStorage.setItem('jamb_perm_' + key, 'yes'); }
 
     // ==================== BASIC POINTS ====================
     function getPoints() { return parseInt(localStorage.getItem('jamb_points') || '0', 10); }
@@ -333,7 +440,7 @@
       document.getElementById('pointsSpent').textContent = localStorage.getItem('jamb_spent') || '0';
     }
 
-    // ==================== USER / REFERRAL ====================
+    // ==================== USER ID / REFERRAL ====================
     function getUserId() {
       let id = localStorage.getItem('jamb_uid');
       if (!id) { id = Math.random().toString(36).substring(2, 8).toUpperCase(); localStorage.setItem('jamb_uid', id); }
@@ -372,91 +479,129 @@
       toastTimer = setTimeout(() => { t.className = 'toast ' + color; }, 2600);
     }
 
-    // ==================== DAILY UNLOCK (Channels 1 & 2) ====================
+    // ==================== 🔐 PIN ACTIVATION ====================
+    function redeemPin(rawPin) {
+      const pin = (rawPin || '').trim().toUpperCase();
+      if (!pin) { showToast('❌ Enter a PIN', 'red'); return; }
+      if (localStorage.getItem('jamb_used_pin_' + pin) === 'yes') {
+        showToast('❌ This PIN has already been used', 'red'); return;
+      }
+      const pts = ACTIVATION_PINS[pin];
+      if (typeof pts === 'undefined') { showToast('❌ Invalid PIN', 'red'); return; }
+      addPoints(pts);
+      localStorage.setItem('jamb_used_pin_' + pin, 'yes');
+      document.getElementById('pinInput').value = '';
+      showToast('🎉 +' + pts + ' points added (includes 10% bonus)!', 'green');
+    }
+    document.getElementById('activatePinBtn').addEventListener('click', () => redeemPin(document.getElementById('pinInput').value));
+    document.getElementById('pinInput').addEventListener('keydown', (e) => { if (e.key === 'Enter') redeemPin(document.getElementById('pinInput').value); });
+
+    // ==================== BUY POINTS UI ====================
+    document.getElementById('uidDisplay').textContent = getUserId();
+    document.getElementById('copyUidBtn').addEventListener('click', () => {
+      const uid = getUserId();
+      try { navigator.clipboard.writeText(uid); showToast('📋 User ID copied!', 'green'); }
+      catch(e) { showToast('User ID: ' + uid, 'green'); }
+    });
+
+    function requestPoints(pts, price, totalPts) {
+      const uid = getUserId();
+      const msg = `Hi! I want to buy *${pts} points* (₦${price.toLocaleString()}) on JAMBLab.\n\nWith +10% bonus → *${totalPts} points*\n\nMy User ID: *${uid}*\n\nPlease send me the activation PIN.`;
+      window.open('https://wa.me/message/WHTP63YEENQ4C1?text=' + encodeURIComponent(msg), '_blank');
+    }
+
+    document.querySelectorAll('.package-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const pts = parseInt(item.dataset.pts, 10);
+        const price = parseInt(item.dataset.price, 10);
+        const total = Math.floor(pts * (1 + POINTS.PURCHASE_BONUS_PERCENT / 100));
+        requestPoints(pts, price, total);
+      });
+    });
+
+    // Live bonus preview for custom input
+    const customInput = document.getElementById('customPtsInput');
+    const customBonusNote = document.getElementById('customBonusNote');
+    customInput.addEventListener('input', () => {
+      const rawPts = parseInt(customInput.value, 10);
+      if (!rawPts || rawPts < 1) { customBonusNote.classList.remove('show'); return; }
+      const bonus = Math.floor(rawPts * POINTS.PURCHASE_BONUS_PERCENT / 100);
+      const total = rawPts + bonus;
+      const price = rawPts * 10;
+      customBonusNote.textContent = `💚 You'll get ${total} points (${rawPts} + ${bonus} bonus) for ₦${price.toLocaleString()}`;
+      customBonusNote.classList.add('show');
+    });
+
+    document.getElementById('customBuyBtn').addEventListener('click', () => {
+      const rawPts = parseInt(customInput.value, 10);
+      if (!rawPts || rawPts < 1) { showToast('❌ Enter a valid points amount', 'red'); return; }
+      const bonus = Math.floor(rawPts * POINTS.PURCHASE_BONUS_PERCENT / 100);
+      const total = rawPts + bonus;
+      const price = rawPts * 10;
+      requestPoints(rawPts, price, total);
+    });
+
+    // ==================== UNLOCK ====================
     let unlocked = false;
     function checkUnlock() {
-      const c1 = claimedToday('ch1');
-      const c2 = claimedToday('ch2');
-
+      const c1Today = claimedToday('ch1');
+      const c2Today = claimedToday('ch2');
       const b1 = document.getElementById('channel1Btn');
       const b2 = document.getElementById('channel2Btn');
-      b1.style.opacity = c1 ? '0.6' : '1';
-      b2.style.opacity = c2 ? '0.6' : '1';
+      b1.style.opacity = c1Today ? '0.6' : '1';
+      b2.style.opacity = c2Today ? '0.6' : '1';
 
-      if (c1 && c2) {
+      if (c1Today && c2Today) {
         unlocked = true;
         document.getElementById('unlockStatus').innerHTML = '<i class="fas fa-unlock"></i> unlocked';
         document.getElementById('unlockStatus').style.background = '#25D366';
-        document.getElementById('bonusRow15').classList.add('claimed');
-
-        // Award +15 ONCE per day when BOTH channels are joined
-        if (!claimedToday('unlockBonus')) {
-          markClaimedToday('unlockBonus');
+        if (isPermanentDone('unlockBonus')) document.getElementById('bonusRow15').classList.add('claimed');
+        if (!isPermanentDone('unlockBonus')) {
+          markPermanentDone('unlockBonus');
           addPoints(POINTS.UNLOCK_BONUS);
+          document.getElementById('bonusRow15').classList.add('claimed');
           showToast('🎉 +' + POINTS.UNLOCK_BONUS + ' points for joining both channels!', 'green');
         }
       } else {
         unlocked = false;
         document.getElementById('unlockStatus').innerHTML = '<i class="fas fa-lock"></i> locked';
         document.getElementById('unlockStatus').style.background = '#8fabbc';
-        document.getElementById('bonusRow15').classList.remove('claimed');
+        if (isPermanentDone('unlockBonus')) document.getElementById('bonusRow15').classList.add('claimed');
+        else document.getElementById('bonusRow15').classList.remove('claimed');
       }
       updateStartButtonState();
     }
-
-    // Channel 1 click — only marks visit, no points
     document.getElementById('channel1Btn').addEventListener('click', () => {
       if (claimedToday('ch1')) { showToast('Already joined today', 'red'); return; }
       markClaimedToday('ch1');
-      showToast('✅ Channel 1 joined. Join Channel 2 to unlock + get 15 pts!', 'green');
+      showToast('✅ Channel 1 joined. Join Channel 2 to unlock!', 'green');
       setTimeout(checkUnlock, 200);
     });
-
-    // Channel 2 click — only marks visit, no points
     document.getElementById('channel2Btn').addEventListener('click', () => {
       if (claimedToday('ch2')) { showToast('Already joined today', 'red'); return; }
       markClaimedToday('ch2');
       showToast('✅ Channel 2 joined. Unlocking now…', 'green');
       setTimeout(checkUnlock, 200);
     });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) { checkUnlock(); refreshUI(); } });
+    window.addEventListener('focus', () => { checkUnlock(); refreshUI(); });
 
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) { checkUnlock(); refreshDailyTasks(); } });
-    window.addEventListener('focus', () => { checkUnlock(); refreshDailyTasks(); });
-
-    // ==================== DAILY-RESET TASK UI REFRESH ====================
-    function refreshDailyTasks() {
-      ['tg','waec','jambtut','vip'].forEach(k => {
-        const rowId = { tg:'bonusRowTg', waec:'bonusRowWaec', jambtut:'bonusRowJambTut', vip:'bonusRowVip' }[k];
-        const row = document.getElementById(rowId);
-        if (!row) return;
-        if (claimedToday(k)) row.classList.add('claimed');
-        else row.classList.remove('claimed');
-      });
-
-      document.querySelectorAll('.share-btn[data-share]').forEach(btn => {
-        const key = 'share_' + btn.dataset.share;
-        if (claimedToday(key)) {
-          btn.classList.add('claimed');
-          btn.setAttribute('disabled', 'true');
-        } else {
-          btn.classList.remove('claimed');
-          btn.removeAttribute('disabled');
-        }
-      });
-
-      checkUnlock();
-    }
-
-    // Bonus channel buttons
+    // ==================== BONUS CHANNELS ====================
     function setupBonusBtn(id, key, points, label) {
       const btn = document.getElementById(id);
       if (!btn) return;
+      const rowId = { tg:'bonusRowTg', waec:'bonusRowWaec', jambtut:'bonusRowJambTut', vip:'bonusRowVip' }[key];
+      if (isPermanentDone(key)) {
+        const row = document.getElementById(rowId); if (row) row.classList.add('claimed');
+        btn.style.opacity = '0.6';
+      }
       btn.addEventListener('click', () => {
-        if (claimedToday(key)) { showToast('Already claimed today', 'red'); return; }
-        markClaimedToday(key);
+        if (isPermanentDone(key)) { showToast('Already claimed', 'red'); return; }
+        markPermanentDone(key);
         addPoints(points);
+        const row = document.getElementById(rowId); if (row) row.classList.add('claimed');
+        btn.style.opacity = '0.6';
         showToast('✅ +' + points + ' points for ' + label + '!', 'green');
-        refreshDailyTasks();
       });
     }
     setupBonusBtn('tgChannelBtn', 'tg', POINTS.TG_CHANNEL_BONUS, 'JAMB Telegram');
@@ -465,6 +610,17 @@
     setupBonusBtn('jambVipChannelBtn', 'vip', POINTS.JAMB_VIP_BONUS, 'JAMB VIP Channel');
 
     // ==================== SHARE (daily reset) ====================
+    function refreshUI() {
+      document.querySelectorAll('.share-btn[data-share]').forEach(btn => {
+        const key = 'share_' + btn.dataset.share;
+        if (claimedToday(key)) {
+          btn.classList.add('claimed'); btn.setAttribute('disabled', 'true');
+        } else {
+          btn.classList.remove('claimed'); btn.removeAttribute('disabled');
+        }
+      });
+      checkUnlock();
+    }
     document.querySelectorAll('.share-btn[data-share]').forEach(btn => {
       const key = 'share_' + btn.dataset.share;
       btn.addEventListener('click', function(e) {
@@ -472,7 +628,7 @@
         markClaimedToday(key);
         addPoints(POINTS.SHARE_REWARD);
         showToast('✅ +' + POINTS.SHARE_REWARD + ' points for sharing!', 'green');
-        refreshDailyTasks();
+        refreshUI();
       });
     });
 
@@ -532,25 +688,16 @@
       catch(e) { document.execCommand('copy'); showToast('📋 Copied!', 'green'); }
     });
 
-    // ==================== SUBJECT → KEY MAP ====================
+    // ==================== SUBJECT KEY MAP ====================
     function getQuizKey(name) {
       const map = {
-        'English': 'english',
-        'Mathematics': 'mathematics',
-        'Maths': 'mathematics',
-        'Physics': 'physics',
-        'Chemistry': 'chemistry',
-        'Biology': 'biology',
-        'Economics': 'economics',
-        'Government': 'government',
-        'Literature': 'literature',
-        'Lit-in-Eng': 'literature',
-        'CRS': 'crs',
-        'CRK': 'crs',
-        'Geography': 'geography',
-        'Commerce': 'commerce',
-        'Accounts': 'financialAccounting',
-        'Financial Accounting': 'financialAccounting',
+        'English': 'english', 'Mathematics': 'mathematics', 'Maths': 'mathematics',
+        'Physics': 'physics', 'Chemistry': 'chemistry', 'Biology': 'biology',
+        'Economics': 'economics', 'Government': 'government',
+        'Literature': 'literature', 'Lit-in-Eng': 'literature',
+        'CRS': 'crs', 'CRK': 'crs',
+        'Geography': 'geography', 'Commerce': 'commerce',
+        'Accounts': 'financialAccounting', 'Financial Accounting': 'financialAccounting',
         'IRK': 'irk'
       };
       return map[name] || name.toLowerCase();
@@ -575,42 +722,30 @@
         const data = quizData[getQuizKey(subj)];
         if (data && data.questions && data.questions.length) {
           pools[subj] = shuffleArray(data.questions).map(q => Object.assign({}, q, { _subject: subj }));
-        } else {
-          pools[subj] = [];
-        }
+        } else { pools[subj] = []; }
       });
-
       const n = subjects.length;
       const base = Math.floor(QUIZ_LENGTH / n);
       const remainder = QUIZ_LENGTH % n;
-
       const indexes = shuffleArray(subjects.map((_, i) => i));
       const targetCount = {};
-      subjects.forEach((s, i) => {
-        targetCount[s] = base + (indexes.slice(0, remainder).includes(i) ? 1 : 0);
-      });
-
-      let pool = [];
-      let leftovers = [];
-
+      subjects.forEach((s, i) => { targetCount[s] = base + (indexes.slice(0, remainder).includes(i) ? 1 : 0); });
+      let pool = [], leftovers = [];
       subjects.forEach(s => {
-        const need = targetCount[s];
-        const available = pools[s];
+        const need = targetCount[s]; const available = pools[s];
         const take = Math.min(need, available.length);
         pool = pool.concat(available.slice(0, take));
         leftovers = leftovers.concat(available.slice(take).map(q => Object.assign({}, q, { _fromOverflow: true })));
       });
-
       if (pool.length < QUIZ_LENGTH) {
         const shuffledLeftovers = shuffleArray(leftovers);
         pool = pool.concat(shuffledLeftovers.slice(0, QUIZ_LENGTH - pool.length));
       }
-
       pool = shuffleArray(pool).slice(0, QUIZ_LENGTH);
       return pool.map(shuffleQuestion);
     }
 
-    // ==================== QUIZ STATE ====================
+    // ==================== QUIZ ====================
     let currentQuestions = [], currentIndex = 0, userAnswers = [], timerInterval = null, timeLeft = TOTAL_TIME;
     const mainScreen = document.getElementById('mainScreen');
     const quizScreen = document.getElementById('quizScreen');
@@ -619,46 +754,29 @@
     document.getElementById('startQuizBtn').addEventListener('click', function() {
       if (!unlocked) { showToast('🔒 Join both channels today to unlock', 'red'); return; }
       if (typeof quizData === 'undefined') { showToast('❌ quiz-data.js not loaded', 'red'); return; }
-
       const subjects = Array.from(selectedSubjects);
       const cost = subjects.length * POINTS.QUIZ_COST;
       if (!deductPoints(cost)) { showToast('❌ Not enough points', 'red'); return; }
       showToast('✅ −' + cost + ' points. Good luck!', 'green');
-
-      const missing = subjects.filter(s => {
-        const d = quizData[getQuizKey(s)];
-        return !d || !d.questions || !d.questions.length;
-      });
-
+      const missing = subjects.filter(s => { const d = quizData[getQuizKey(s)]; return !d || !d.questions || !d.questions.length; });
       const questions = buildBalancedPool(subjects);
-      if (questions.length === 0) {
-        showToast('📚 No questions available', 'red');
-        addPoints(cost);
-        return;
-      }
-
+      if (questions.length === 0) { showToast('📚 No questions available', 'red'); addPoints(cost); return; }
       beginQuiz(questions, subjects);
       if (missing.length) setTimeout(() => showToast('ℹ️ No questions yet for: ' + missing.join(', '), 'red'), 1500);
     });
 
     function beginQuiz(questions, subjects) {
-      currentQuestions = questions;
-      currentIndex = 0;
+      currentQuestions = questions; currentIndex = 0;
       userAnswers = new Array(questions.length).fill(null);
       timeLeft = TOTAL_TIME;
       document.getElementById('quizSubjectName').innerHTML = '<i class="fas fa-book"></i> ' + subjects.join(' · ');
       document.getElementById('scoreLbl').textContent = 'out of ' + questions.length;
-      mainScreen.style.display = 'none';
-      resultScreen.style.display = 'none';
-      quizScreen.style.display = 'block';
-      window.scrollTo(0, 0);
-      startTimer();
-      renderQuestion();
+      mainScreen.style.display = 'none'; resultScreen.style.display = 'none';
+      quizScreen.style.display = 'block'; window.scrollTo(0, 0);
+      startTimer(); renderQuestion();
     }
-
     function startTimer() {
-      clearInterval(timerInterval);
-      updateTimerDisplay();
+      clearInterval(timerInterval); updateTimerDisplay();
       timerInterval = setInterval(() => {
         timeLeft--; updateTimerDisplay();
         if (timeLeft <= 0) { clearInterval(timerInterval); showToast('⏰ Time up!', 'red'); finishQuiz(); }
@@ -670,17 +788,13 @@
       d.innerHTML = '<i class="fas fa-clock"></i> ' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
       d.classList.toggle('warning', timeLeft <= 60);
     }
-
     function renderQuestion() {
       const q = currentQuestions[currentIndex];
-      document.getElementById('questionCounter').textContent =
-        'Question ' + (currentIndex+1) + ' of ' + currentQuestions.length + '  ·  ' + (q._subject || '');
+      document.getElementById('questionCounter').textContent = 'Question ' + (currentIndex+1) + ' of ' + currentQuestions.length + '  ·  ' + (q._subject || '');
       document.getElementById('questionText').textContent = q.question;
       document.getElementById('progressFill').style.width = ((currentIndex+1)/currentQuestions.length)*100 + '%';
-
       const letters = ['A','B','C','D','E'];
-      const container = document.getElementById('optionsContainer');
-      container.innerHTML = '';
+      const container = document.getElementById('optionsContainer'); container.innerHTML = '';
       q.options.forEach((opt, i) => {
         const div = document.createElement('div');
         div.className = 'option' + (userAnswers[currentIndex] === i ? ' selected' : '');
@@ -688,7 +802,6 @@
         div.addEventListener('click', () => selectOption(i));
         container.appendChild(div);
       });
-
       document.getElementById('prevBtn').style.display = currentIndex > 0 ? 'block' : 'none';
       const nb = document.getElementById('nextBtn'), sb = document.getElementById('submitBtn');
       if (currentIndex === currentQuestions.length - 1) { nb.style.display = 'none'; sb.style.display = 'block'; }
@@ -707,14 +820,11 @@
       if (u > 0 && !confirm('You have ' + u + ' unanswered question(s). Submit anyway?')) return;
       finishQuiz();
     });
-
     function finishQuiz() {
       clearInterval(timerInterval);
-      let score = 0;
-      const letters = ['A','B','C','D','E'];
+      let score = 0; const letters = ['A','B','C','D','E'];
       const reviewHTML = currentQuestions.map((q, i) => {
-        const ok = userAnswers[i] === q.correct;
-        if (ok) score++;
+        const ok = userAnswers[i] === q.correct; if (ok) score++;
         const ua = userAnswers[i] !== null ? letters[userAnswers[i]] + '. ' + q.options[userAnswers[i]] : '<em>Not answered</em>';
         const ca = letters[q.correct] + '. ' + q.options[q.correct];
         return '<div class="review-item ' + (ok ? 'correct' : 'wrong') + '">' +
@@ -722,36 +832,25 @@
           '<div class="ans">Your answer: ' + (ok ? '<span class="correct-ans">'+ua+'</span>' : '<span class="user-wrong">'+ua+'</span>') + '</div>' +
           (!ok ? '<div class="ans">Correct: <span class="correct-ans">'+ca+'</span></div>' : '') + '</div>';
       }).join('');
-
       const total = currentQuestions.length;
       const percent = Math.round((score/total)*100);
       document.getElementById('scoreNum').textContent = score;
       document.getElementById('scoreLbl').textContent = 'out of ' + total;
       document.getElementById('reviewContainer').innerHTML = reviewHTML;
-
       let title = 'Well done! 🎉', msg = 'Keep practicing to improve your score.';
       if (percent >= 80) { title = 'Excellent! 🌟'; msg = 'You are well prepared for JAMB!'; }
       else if (percent >= 60) { title = 'Good job! 👍'; msg = 'A bit more practice will get you there.'; }
       else if (percent >= 40) { title = 'Keep going! 💪'; msg = 'Review your weak areas and try again.'; }
       else { title = "Don't give up! 📚"; msg = 'Study more and retake the quiz.'; }
-
       document.getElementById('resultTitle').textContent = title;
       document.getElementById('resultMessage').textContent = msg;
-      quizScreen.style.display = 'none';
-      resultScreen.style.display = 'block';
-      window.scrollTo(0, 0);
-      updatePointsUI();
+      quizScreen.style.display = 'none'; resultScreen.style.display = 'block';
+      window.scrollTo(0, 0); updatePointsUI();
     }
-
     document.getElementById('restartBtn').addEventListener('click', () => {
-      resultScreen.style.display = 'none';
-      mainScreen.style.display = 'block';
-      selectedSubjects.clear();
-      subjectItems.forEach(s => s.classList.remove('selected'));
-      updateSelectedUI();
-      dailyTopUp();
-      updateStartButtonState();
-      window.scrollTo(0, 0);
+      resultScreen.style.display = 'none'; mainScreen.style.display = 'block';
+      selectedSubjects.clear(); subjectItems.forEach(s => s.classList.remove('selected'));
+      updateSelectedUI(); dailyTopUp(); updateStartButtonState(); window.scrollTo(0, 0);
     });
 
     // ==================== INIT ====================
@@ -760,9 +859,10 @@
       handleIncomingReferral();
       awardReferralToCurrent();
       document.getElementById('refCount').textContent = localStorage.getItem('jamb_ref_count') || '0';
+      document.getElementById('uidDisplay').textContent = getUserId();
       updatePointsUI();
       checkUnlock();
-      refreshDailyTasks();
+      refreshUI();
       updateSelectedUI();
       dailyTopUp();
       updateStartButtonState();
@@ -773,4 +873,3 @@
 </script>
 </body>
 </html>
-```
