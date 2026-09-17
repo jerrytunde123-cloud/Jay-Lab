@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://js.paystack.co/v1/inline.js"></script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
@@ -389,15 +390,6 @@
     const TOTAL_TIME = 25 * 60;
     const ADMIN_WHATSAPP = '2347048135078';
 
-    // ==================== 🔐 ACTIVATION PINS ====================
-    // PIN values must already include the 10% bonus.
-    const ACTIVATION_PINS = {
-      "JAMB-A1B2-55":  55,
-      "JAMB-C3D4-110": 110,
-      "JAMB-E5F6-550": 550,
-      // 👉 Add more PINs here
-    };
-
     // ==================== DATE HELPERS ====================
     function todayKey() {
       const d = new Date();
@@ -496,17 +488,69 @@
       catch(e) { showToast('User ID: ' + uid, 'green'); }
     });
 
-    function requestPoints(pts, price, totalPts) {
-      const uid = getUserId();
-      const msg =
-        `I want to purchase ${pts} points on JAMBLab.\n\n` +
-        `With +10% bonus → ${totalPts} points\n\n` +
-        `User ID: ${uid}\n\n` +
-        `Please send me the activation PIN.`;
-      const url = 'https://wa.me/' + ADMIN_WHATSAPP + '?text=' + encodeURIComponent(msg);
-      window.open(url, '_blank');
-    }
+    // 🔑 Your Paystack TEST PUBLIC KEY (safe to expose — cannot verify or read account)
+const PAYSTACK_PUBLIC_KEY = 'pk_test_db30e33950ad15f2ea42290a98fe4481984c7274'; // ← paste your test public key here
 
+function requestPoints(pts, price, totalPts) {
+  const uid = getUserId();
+  const email = prompt(
+    'Enter your email for the payment receipt:',
+    localStorage.getItem('jamb_email') || ''
+  );
+
+  if (!email || !email.includes('@')) {
+    showToast('❌ A valid email is required', 'red');
+    return;
+  }
+  localStorage.setItem('jamb_email', email);
+
+  // Amount must be in kobo (₦1 = 100 kobo)
+  const amountKobo = price * 100;
+
+  const handler = PaystackPop.setup({
+    key: PAYSTACK_PUBLIC_KEY,
+    email: email,
+    amount: amountKobo,
+    currency: 'NGN',
+    metadata: {
+      custom_fields: [
+        { display_name: 'User ID', variable_name: 'user_id', value: uid },
+        { display_name: 'Points', variable_name: 'points', value: totalPts },
+      ],
+    },
+    callback: function (response) {
+      // Paystack returns a reference — send it to our backend to verify
+      verifyWithBackend(response.reference, price, totalPts);
+    },
+    onClose: function () {
+      showToast('Payment window closed', 'red');
+    },
+  });
+
+  handler.openIframe();
+}
+
+async function verifyWithBackend(reference, price, totalPts) {
+  showToast('⏳ Verifying payment…', '');
+  try {
+    const res = await fetch('/api/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reference: reference, expectedAmount: price }),
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      // ✅ Payment confirmed by the server. Credit the points.
+      addPoints(totalPts);
+      showToast('🎉 +' + totalPts + ' points added!', 'green');
+    } else {
+      showToast('❌ ' + (data.error || 'Verification failed'), 'red');
+    }
+  } catch (err) {
+    showToast('❌ Could not verify payment', 'red');
+  }
+}
     document.querySelectorAll('.package-item').forEach(item => {
       item.addEventListener('click', () => {
         const pts = parseInt(item.dataset.pts, 10);
