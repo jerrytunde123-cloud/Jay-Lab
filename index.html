@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://js.paystack.co/v1/inline.js"></script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>JAMB Quiz · Newton</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://js.paystack.co/v1/inline.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif; }
     body { background: #f4f7fb; min-height: 100vh; display: flex; justify-content: center; padding: 1rem; }
@@ -165,8 +165,8 @@
     <div class="unlock-box" id="unlockBox">
       <p><i class="fas fa-lock" style="margin-right: 6px;"></i> <strong>🔐 Daily Join & Unlock</strong> — join both channels today to unlock quizzes</p>
       <div class="bonus-grid">
-        <a href="https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" target="_blank" class="btn-whatsapp" id="channel1Btn"><i class="fab fa-whatsapp"></i> Join WhatsApp Channel 1</a>
-        <a href="https://whatsapp.com/channel/0029Vb8HCZE6rsR1fthNok1P" target="_blank" class="btn-whatsapp" id="channel2Btn" style="background: #128C7E; box-shadow: 0 6px 14px rgba(18, 140, 126, 0.25);"><i class="fab fa-whatsapp"></i> Join WhatsApp Channel 2</a>
+        <a href="https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" target="_blank" class="btn-whatsapp wa-deeplink" data-channel="https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" data-fallback="https://whatsapp.com/channel/0029VbCJXuCDeON8S6aCk43B" id="channel1Btn"><i class="fab fa-whatsapp"></i> Join WhatsApp Channel 1</a>
+        <a href="https://whatsapp.com/channel/0029Vb8HCZE6rsR1fthNok1P" target="_blank" class="btn-whatsapp wa-deeplink" data-channel="https://whatsapp.com/channel/0029Vb8HCZE6rsR1fthNok1P" data-fallback="https://whatsapp.com/channel/0029Vb8HCZE6rsR1fthNok1P" id="channel2Btn" style="background: #128C7E; box-shadow: 0 6px 14px rgba(18, 140, 126, 0.25);"><i class="fab fa-whatsapp"></i> Join WhatsApp Channel 2</a>
 
         <div style="margin: 8px 0 2px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
           <span class="badge-unlocked" id="unlockStatus" style="background: #8fabbc;"><i class="fas fa-lock"></i> locked</span>
@@ -232,9 +232,9 @@
       <p class="text-small" style="margin-bottom: 10px;"><strong>Join AND share</strong> these channels to your friends — invite them so everyone can participate and earn together. Points rewarded once.</p>
       <div class="bonus-grid">
         <a href="https://t.me/jambvip" target="_blank" class="btn-whatsapp btn-telegram" id="tgChannelBtn"><i class="fab fa-telegram"></i> Join JAMB Telegram (+15 pts)</a>
-        <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp" id="waecChannelBtn" style="background: #16a34a; box-shadow: 0 6px 14px rgba(22, 163, 74, 0.25);"><i class="fab fa-whatsapp"></i> Join WAEC Tutorial Channel (+10 pts)</a>
-        <a href="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" target="_blank" class="btn-whatsapp" id="jambTutChannelBtn" style="background: #0e7490; box-shadow: 0 6px 14px rgba(14, 116, 144, 0.25);"><i class="fab fa-whatsapp"></i> Join JAMB Tutorial Channel (+10 pts)</a>
-        <a href="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" target="_blank" class="btn-whatsapp" id="jambVipChannelBtn" style="background: #7c3aed; box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);"><i class="fab fa-whatsapp"></i> Join JAMB VIP Channel (+15 pts)</a>
+        <a href="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" target="_blank" class="btn-whatsapp wa-deeplink" data-channel="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" data-fallback="https://whatsapp.com/channel/0029Vb8Fm3hH5JM3KEspIR04" id="waecChannelBtn" style="background: #16a34a; box-shadow: 0 6px 14px rgba(22, 163, 74, 0.25);"><i class="fab fa-whatsapp"></i> Join WAEC Tutorial Channel (+10 pts)</a>
+        <a href="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" target="_blank" class="btn-whatsapp wa-deeplink" data-channel="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" data-fallback="https://whatsapp.com/channel/0029Vb8TtA8EVccNvTRmUI2u" id="jambTutChannelBtn" style="background: #0e7490; box-shadow: 0 6px 14px rgba(14, 116, 144, 0.25);"><i class="fab fa-whatsapp"></i> Join JAMB Tutorial Channel (+10 pts)</a>
+        <a href="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" target="_blank" class="btn-whatsapp wa-deeplink" data-channel="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" data-fallback="https://whatsapp.com/channel/0029VbCY2pvGOj9k8pFXod0o" id="jambVipChannelBtn" style="background: #7c3aed; box-shadow: 0 6px 14px rgba(124, 58, 237, 0.3);"><i class="fab fa-whatsapp"></i> Join JAMB VIP Channel (+15 pts)</a>
 
         <div class="bonus-row" id="bonusRowTg"><i class="fas fa-paper-plane"></i> 15 pts for JAMB Telegram</div>
         <div class="bonus-row" id="bonusRowWaec"><i class="fas fa-graduation-cap"></i> 10 pts for WAEC Tutorial</div>
@@ -258,7 +258,7 @@
         <button class="btn-copy-uid" id="copyUidBtn"><i class="fas fa-copy"></i> Copy ID</button>
       </div>
 
-      <p class="text-small" style="margin-bottom: 6px;"><i class="fas fa-info-circle"></i> Select a package or enter a custom amount, then send payment + your User ID to us. We'll reply with an <strong>activation PIN</strong>.</p>
+      <p class="text-small" style="margin-bottom: 6px;"><i class="fas fa-info-circle"></i> Select a package or enter a custom amount, then pay securely with Paystack. Your points will be credited automatically after payment.</p>
 
       <div class="package-grid">
         <div class="package-item" data-pts="50" data-price="500">
@@ -283,7 +283,7 @@
 
       <div class="custom-row">
         <input type="number" class="custom-input" id="customPtsInput" placeholder="Enter points needed (e.g. 250)" min="1" step="1">
-        <button class="btn-buy" id="customBuyBtn"><i class="fas fa-paper-plane"></i> Request</button>
+        <button class="btn-buy" id="customBuyBtn"><i class="fas fa-paper-plane"></i> Pay Now</button>
       </div>
       <div class="custom-bonus-note" id="customBonusNote"></div>
 
@@ -297,7 +297,7 @@
       </div>
 
       <div style="margin-top: 12px;">
-        <div class="text-small" style="margin-bottom: 6px;"><strong>Need points?</strong> Message us:</div>
+        <div class="text-small" style="margin-bottom: 6px;"><strong>Need help?</strong> Message us:</div>
         <div class="contact-buttons">
           <a href="https://wa.me/2347048135078?text=I%20want%20to%20purchase%20points%20on%20JAMBLab" target="_blank" class="wa" style="background:#075e54;border-radius:40px;padding:0.5rem 1.1rem;font-size:0.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:white;"><i class="fab fa-whatsapp"></i> WhatsApp: +234 704 813 5078</a>
           <a href="https://t.me/kingjay225" target="_blank" class="tg" style="background:#229ED9;border-radius:40px;padding:0.5rem 1.1rem;font-size:0.8rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:white;"><i class="fab fa-telegram"></i> Telegram us</a>
@@ -372,6 +372,57 @@
       console.log("✅ quiz-data.js loaded. Subjects:", Object.keys(quizData));
     }
 
+    // ==================== 🔗 WHATSAPP DEEP LINK HANDLER ====================
+    // Attempts to open WhatsApp app directly for channel links.
+    // Falls back to the browser link if the app is not installed.
+    function openWhatsAppChannel(url) {
+      const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+      if (!isMobile) {
+        window.open(url, '_blank');
+        return;
+      }
+      // Convert https://whatsapp.com/channel/XXXX to whatsapp://channel/XXXX attempt
+      // Note: WhatsApp does not officially support channel deep links, so we
+      // attempt the app scheme and fall back to the web link after a short delay.
+      const channelMatch = url.match(/whatsapp\.com\/channel\/([A-Za-z0-9]+)/);
+      if (channelMatch) {
+        const channelId = channelMatch[1];
+        const appUrl = 'whatsapp://channel/' + channelId;
+        const fallback = url;
+        let didHide = false;
+        const onVisibilityChange = () => {
+          if (document.hidden) didHide = true;
+        };
+        document.addEventListener('visibilitychange', onVisibilityChange);
+        // Try to open the app
+        window.location.href = appUrl;
+        // If the app didn't open (page still visible), fall back to web link
+        setTimeout(() => {
+          document.removeEventListener('visibilitychange', onVisibilityChange);
+          if (!didHide) {
+            window.open(fallback, '_blank');
+          }
+        }, 1200);
+      } else {
+        window.open(url, '_blank');
+      }
+    }
+
+    document.querySelectorAll('.wa-deeplink').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const channelUrl = this.dataset.channel || this.href;
+        openWhatsAppChannel(channelUrl);
+        // Still mark the join locally so the unlock logic works
+        const id = this.id;
+        if (id === 'channel1Btn') { if (!claimedToday('ch1')) { markClaimedToday('ch1'); showToast('✅ Channel 1 joined. Join Channel 2 to unlock!', 'green'); setTimeout(checkUnlock, 400); } }
+        if (id === 'channel2Btn') { if (!claimedToday('ch2')) { markClaimedToday('ch2'); showToast('✅ Channel 2 joined. Unlocking now…', 'green'); setTimeout(checkUnlock, 400); } }
+        if (id === 'waecChannelBtn') { if (!isPermanentDone('waec')) { markPermanentDone('waec'); addPoints(POINTS.WAEC_CHANNEL_BONUS); const row = document.getElementById('bonusRowWaec'); if (row) row.classList.add('claimed'); this.style.opacity = '0.6'; showToast('✅ +' + POINTS.WAEC_CHANNEL_BONUS + ' points for WAEC Tutorial!', 'green'); } }
+        if (id === 'jambTutChannelBtn') { if (!isPermanentDone('jambtut')) { markPermanentDone('jambtut'); addPoints(POINTS.JAMB_TUTORIAL_BONUS); const row = document.getElementById('bonusRowJambTut'); if (row) row.classList.add('claimed'); this.style.opacity = '0.6'; showToast('✅ +' + POINTS.JAMB_TUTORIAL_BONUS + ' points for JAMB Tutorial!', 'green'); } }
+        if (id === 'jambVipChannelBtn') { if (!isPermanentDone('vip')) { markPermanentDone('vip'); addPoints(POINTS.JAMB_VIP_BONUS); const row = document.getElementById('bonusRowVip'); if (row) row.classList.add('claimed'); this.style.opacity = '0.6'; showToast('✅ +' + POINTS.JAMB_VIP_BONUS + ' points for JAMB VIP Channel!', 'green'); } }
+      });
+    });
+
     // ==================== POINTS ====================
     const POINTS = {
       UNLOCK_BONUS: 15,
@@ -389,6 +440,19 @@
     const QUIZ_LENGTH = 20;
     const TOTAL_TIME = 25 * 60;
     const ADMIN_WHATSAPP = '2347048135078';
+
+    // ==================== 🔑 PAYSTACK PUBLIC KEY ====================
+    // Replace with your LIVE public key (pk_live_...) when going live.
+    const PAYSTACK_PUBLIC_KEY = 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+
+    // ==================== 🔐 ACTIVATION PINS ====================
+    // NOTE: These are still in the frontend for now. Move to backend later for full security.
+    const ACTIVATION_PINS = {
+      "JAMB-A1B2-55":  55,
+      "JAMB-C3D4-110": 110,
+      "JAMB-E5F6-550": 550,
+      // 👉 Add more PINs here
+    };
 
     // ==================== DATE HELPERS ====================
     function todayKey() {
@@ -488,69 +552,66 @@
       catch(e) { showToast('User ID: ' + uid, 'green'); }
     });
 
-    // 🔑 Your Paystack TEST PUBLIC KEY (safe to expose — cannot verify or read account)
-const PAYSTACK_PUBLIC_KEY = 'pk_test_db30e33950ad15f2ea42290a98fe4481984c7274'; // ← paste your test public key here
+    // ==================== PAYSTACK INTEGRATION ====================
+    function requestPoints(pts, price, totalPts) {
+      const uid = getUserId();
+      const email = prompt(
+        'Enter your email for the payment receipt:',
+        localStorage.getItem('jamb_email') || ''
+      );
 
-function requestPoints(pts, price, totalPts) {
-  const uid = getUserId();
-  const email = prompt(
-    'Enter your email for the payment receipt:',
-    localStorage.getItem('jamb_email') || ''
-  );
+      if (!email || !email.includes('@')) {
+        showToast('❌ A valid email is required', 'red');
+        return;
+      }
+      localStorage.setItem('jamb_email', email);
 
-  if (!email || !email.includes('@')) {
-    showToast('❌ A valid email is required', 'red');
-    return;
-  }
-  localStorage.setItem('jamb_email', email);
+      // Amount must be in kobo (₦1 = 100 kobo)
+      const amountKobo = price * 100;
 
-  // Amount must be in kobo (₦1 = 100 kobo)
-  const amountKobo = price * 100;
+      const handler = PaystackPop.setup({
+        key: PAYSTACK_PUBLIC_KEY,
+        email: email,
+        amount: amountKobo,
+        currency: 'NGN',
+        metadata: {
+          custom_fields: [
+            { display_name: 'User ID', variable_name: 'user_id', value: uid },
+            { display_name: 'Points', variable_name: 'points', value: totalPts },
+          ],
+        },
+        callback: function (response) {
+          verifyWithBackend(response.reference, price, totalPts);
+        },
+        onClose: function () {
+          showToast('Payment window closed', 'red');
+        },
+      });
 
-  const handler = PaystackPop.setup({
-    key: PAYSTACK_PUBLIC_KEY,
-    email: email,
-    amount: amountKobo,
-    currency: 'NGN',
-    metadata: {
-      custom_fields: [
-        { display_name: 'User ID', variable_name: 'user_id', value: uid },
-        { display_name: 'Points', variable_name: 'points', value: totalPts },
-      ],
-    },
-    callback: function (response) {
-      // Paystack returns a reference — send it to our backend to verify
-      verifyWithBackend(response.reference, price, totalPts);
-    },
-    onClose: function () {
-      showToast('Payment window closed', 'red');
-    },
-  });
-
-  handler.openIframe();
-}
-
-async function verifyWithBackend(reference, price, totalPts) {
-  showToast('⏳ Verifying payment…', '');
-  try {
-    const res = await fetch('/api/verify-payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ reference: reference, expectedAmount: price }),
-    });
-    const data = await res.json();
-
-    if (data.success) {
-      // ✅ Payment confirmed by the server. Credit the points.
-      addPoints(totalPts);
-      showToast('🎉 +' + totalPts + ' points added!', 'green');
-    } else {
-      showToast('❌ ' + (data.error || 'Verification failed'), 'red');
+      handler.openIframe();
     }
-  } catch (err) {
-    showToast('❌ Could not verify payment', 'red');
-  }
-}
+
+    async function verifyWithBackend(reference, price, totalPts) {
+      showToast('⏳ Verifying payment…', '');
+      try {
+        const res = await fetch('/api/verify-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reference: reference, expectedAmount: price }),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          addPoints(totalPts);
+          showToast('🎉 +' + totalPts + ' points added!', 'green');
+        } else {
+          showToast('❌ ' + (data.error || 'Verification failed'), 'red');
+        }
+      } catch (err) {
+        showToast('❌ Could not verify payment', 'red');
+      }
+    }
+
     document.querySelectorAll('.package-item').forEach(item => {
       item.addEventListener('click', () => {
         const pts = parseInt(item.dataset.pts, 10);
@@ -611,18 +672,7 @@ async function verifyWithBackend(reference, price, totalPts) {
       }
       updateStartButtonState();
     }
-    document.getElementById('channel1Btn').addEventListener('click', () => {
-      if (claimedToday('ch1')) { showToast('Already joined today', 'red'); return; }
-      markClaimedToday('ch1');
-      showToast('✅ Channel 1 joined. Join Channel 2 to unlock!', 'green');
-      setTimeout(checkUnlock, 200);
-    });
-    document.getElementById('channel2Btn').addEventListener('click', () => {
-      if (claimedToday('ch2')) { showToast('Already joined today', 'red'); return; }
-      markClaimedToday('ch2');
-      showToast('✅ Channel 2 joined. Unlocking now…', 'green');
-      setTimeout(checkUnlock, 200);
-    });
+
     document.addEventListener('visibilitychange', () => { if (!document.hidden) { checkUnlock(); refreshUI(); } });
     window.addEventListener('focus', () => { checkUnlock(); refreshUI(); });
 
@@ -645,9 +695,6 @@ async function verifyWithBackend(reference, price, totalPts) {
       });
     }
     setupBonusBtn('tgChannelBtn', 'tg', POINTS.TG_CHANNEL_BONUS, 'JAMB Telegram');
-    setupBonusBtn('waecChannelBtn', 'waec', POINTS.WAEC_CHANNEL_BONUS, 'WAEC Tutorial');
-    setupBonusBtn('jambTutChannelBtn', 'jambtut', POINTS.JAMB_TUTORIAL_BONUS, 'JAMB Tutorial');
-    setupBonusBtn('jambVipChannelBtn', 'vip', POINTS.JAMB_VIP_BONUS, 'JAMB VIP Channel');
 
     // ==================== SHARE (daily reset) ====================
     function refreshUI() {
